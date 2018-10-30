@@ -52,6 +52,17 @@ new_hosts() {
     echo -e "\n127.0.0.1\t$1\n" >> /etc/hosts
 }
 
+#
+# $1 'dominio.local'
+# Enable site
+# 
+enable() {
+    cd /etc/apache2/sites-available/
+    sudo a2ensite "$1.conf"
+    sudo service apache2 restart
+    echo "Done"
+}
+
 # Check if the function exists (bash specific)
 if declare -f "$1" > /dev/null
 then
