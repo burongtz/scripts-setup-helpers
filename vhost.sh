@@ -1,8 +1,12 @@
 #!/bin/bash
 
-# create_conf 'dominio.local' 'domainRoot/frontend/' 'domainRoot/frontend/public'
-
-create_conf() {
+#
+# Create new file $1.conf
+# $1 'dominio.local'
+# $2 'domainRoot/frontend/'
+# $3 'domainRoot/frontend/public'
+#
+new_conf() {
     tags="<VirtualHost *:80>"
     tags+="\n"
 
@@ -38,7 +42,7 @@ create_conf() {
     tags+="\n"
 
 
-    echo -e $tags >> /etc/apache2/sites-available/test.conf
+    echo -e $tags >> /etc/apache2/sites-available/$1.conf
 }
 
 # Check if the function exists (bash specific)
