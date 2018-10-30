@@ -63,6 +63,17 @@ enable() {
     echo "Done"
 }
 
+#
+# $1 'dominio.local'
+# Disable site
+# 
+disable() {
+    cd /etc/apache2/sites-available/
+    sudo a2dissite "$1.conf"
+    sudo service apache2 restart
+    echo "Done"
+}
+
 # Check if the function exists (bash specific)
 if declare -f "$1" > /dev/null
 then
