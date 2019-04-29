@@ -1,2 +1,2 @@
-# setup-vhost
-Tool to setup a vhost
+# Scripts setup helpers
+Tools to help with some bored configurations
